@@ -17,8 +17,9 @@
   .eyebrow { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #1FC98D; margin-bottom: 16px; }
 
   /* Header */
-  .masthead { position: relative; display: flex; flex-direction: column; min-height: 590px; background: #053A40 url('img/hero-bridge.jpg') center 42% / cover no-repeat; }
-  .masthead::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,58,64,0.74) 0%, rgba(5,58,64,0.62) 55%, rgba(5,58,64,0.72) 100%); }
+  .masthead { position: relative; display: flex; flex-direction: column; min-height: 590px; background: #053A40 url('img/hero-bridge.jpg') center center / cover no-repeat; }
+  /* Same underlay as jaxciviccouncil.com/values: flat black at 40% over the photo */
+  .masthead::before { content: ''; position: absolute; inset: 0; background: #000; opacity: 0.4; }
   .masthead > * { position: relative; z-index: 1; }
   .hdr { background: transparent; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
