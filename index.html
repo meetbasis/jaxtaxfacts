@@ -18,14 +18,18 @@
   .eyebrow { display: block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1FC98D; margin-bottom: 16px; }
 
   /* Header */
-  .hdr { background: #053A40; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
+  .masthead { position: relative; background: #053A40 url('img/hero-bridge.jpg') center 42% / cover no-repeat; }
+  .masthead::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,58,64,0.90) 0%, rgba(5,58,64,0.82) 55%, rgba(5,58,64,0.88) 100%); }
+  .masthead > * { position: relative; z-index: 1; }
+  .hdr { background: transparent; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
   .brand { display: flex; align-items: center; gap: 12px; }
   .brand-name { color: #FCFCFD; font-size: 14.5px; font-weight: 800; letter-spacing: 0.08em; }
   .hdr a.tool { color: #7FE0C4; font-size: 13.5px; font-weight: 700; text-decoration: none; border: 1.5px solid #17636A; border-radius: 6px; padding: 7px 15px; }
   .hdr a.tool:hover { background: #0A464E; }
 
   /* Hero */
-  .hero { background: #053A40; color: #FCFCFD; padding: 64px 0 86px; }
+  .hero { background: transparent; color: #FCFCFD; padding: 64px 0 86px; }
+  .hero h1, .hero .sub { text-shadow: 0 1px 2px rgba(5,58,64,0.6); }
   .hero h1 { font-size: 46px; max-width: 1024px; letter-spacing: -0.015em; }
   .hero h1 span { display: block; }
   .hero h1 span + span { margin-top: 14px; }
@@ -122,19 +126,6 @@
   .aw-slot .cap { font-size: 13.5px; color: #FCFCFD; font-weight: 600; line-height: 1.4; }
   .aw-slot .cred { font-size: 10.5px; color: #9CC4BC; line-height: 1.35; }
   .aw-note { margin-top: 22px; font-size: 12.5px; color: #7FA9A2; }
-  .aw-credits { font-family: inherit; font-size: 12.5px; font-weight: 600; color: #7FA9A2; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #2C5D57; }
-  .aw-credits:hover { color: #7FE0C4; text-decoration-color: #7FE0C4; }
-  .aw-credits:focus-visible { outline: 2px solid #1FC98D; outline-offset: 3px; border-radius: 3px; }
-  .credits-dlg { border: 1px solid #DFEDEA; border-radius: 12px; padding: 28px 30px 26px; max-width: 460px; width: calc(100% - 40px); background: #FCFCFD; color: #16262A; box-shadow: 0 18px 50px rgba(5,58,64,0.28); }
-  .credits-dlg::backdrop { background: rgba(5,58,64,0.55); }
-  .credits-dlg h3 { font-size: 20px; padding-right: 36px; }
-  .credits-dlg p { margin-top: 8px; font-size: 13.5px; color: #5C6C6F; }
-  .credits-dlg ul { margin: 16px 0 0; padding-left: 18px; font-size: 14.5px; color: #445255; }
-  .credits-dlg li { margin-bottom: 8px; }
-  .credits-dlg a { color: #01676E; font-weight: 600; }
-  .credits-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid #BFE0DA; background: #FCFCFD; color: #01676E; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0; font-size: 20px; line-height: 1; }
-  .credits-close:hover { background: #EAF7F4; border-color: #1FC98D; }
-  .credits-close:focus-visible { outline: 2px solid #1FC98D; outline-offset: 2px; }
 
   .feel-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; margin-top: 36px; }
   .feel { border-top: 3px solid #1FC98D; padding-top: 16px; }
@@ -183,6 +174,7 @@
   .ftr { background: #053A40; color: #B9DAD3; padding: 46px 0 30px; }
   .ftr h4 { font-family: 'Public Sans', sans-serif; font-size: 11.5px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: #7FE0C4; }
   .ftr p { font-size: 13.5px; margin-top: 12px; max-width: 620px; }
+  .ftr-logo { display: block; height: 48px; width: auto; }
   .ftr-links { margin-top: 12px; display: flex; gap: 20px; flex-wrap: wrap; }
   .ftr-links a { color: #DCEDE9; font-size: 13.5px; text-decoration: none; border-bottom: 1px solid #2C5D57; }
   .ftr-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid #0F4A51; font-size: 12px; color: #6F9E97; }
@@ -212,6 +204,7 @@
 </head>
 <body>
 
+  <div class="masthead">
   <div class="hdr">
     <div class="brand">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -231,6 +224,7 @@
       <h1><span>Amendment 3 would sharply reduce city services, including parks, libraries, roads, and drainage.</span><span>It could also slow response times for police and fire.</span></h1>
       <p class="sub">And Amendment 3 moves decision making about our community to Tallahassee.</p>
     </div>
+  </div>
   </div>
 
   <!-- ============ ACT 1: THE CONCERN IS BROAD ============ -->
@@ -367,20 +361,8 @@
           <div class="scrim"><span class="cap">Property Code Enforcement</span></div>
         </div>
       </div>
-      <p class="aw-note"><button class="aw-credits" type="button" id="creditsOpen" aria-haspopup="dialog" aria-controls="creditsDlg">Image credits</button></p>
     </div>
   </div>
-
-  <dialog class="credits-dlg" id="creditsDlg" aria-labelledby="creditsTitle">
-    <button class="credits-close" type="button" id="creditsClose" aria-label="Close">&times;</button>
-    <h3 id="creditsTitle">Image credits</h3>
-    <p>Photographs in &ldquo;What Your Property Taxes Pay For&rdquo; appear courtesy of:</p>
-    <ul>
-      <li><a href="https://dia.jacksonville.gov/" target="_blank" rel="noopener">Downtown Investment Authority, City of Jacksonville</a></li>
-      <li>The Florida Times-Union</li>
-      <li><a href="https://jacksonville.kidsoutandabout.com/content/jacksonville-public-library" target="_blank" rel="noopener">KidsOutAndAbout Jacksonville, Jacksonville Public Library</a></li>
-    </ul>
-  </dialog>
 
   <!-- ============ ACT 4: FAQ ============ -->
   <div class="sec tint">
@@ -498,6 +480,7 @@
 
   <div class="ftr">
     <div class="wrap">
+      <img class="ftr-logo" src="img/jcc-logo.svg" alt="Jacksonville Civic Council" width="245" height="65">
       <div class="ftr-links">
         <a href="budget-tool.html">Try the budget</a>
       </div>
@@ -609,25 +592,6 @@
 
     paint();
     start();
-  })();
-
-  /* ---- Image credits popup ---- */
-  (function () {
-    var dlg = document.getElementById('creditsDlg');
-    var open = document.getElementById('creditsOpen');
-    if (!dlg || !open) return;
-    if (typeof dlg.showModal !== 'function') {
-      /* Very old browsers: fall back to a plain link */
-      open.addEventListener('click', function () { window.open('https://dia.jacksonville.gov/', '_blank', 'noopener'); });
-      return;
-    }
-    open.addEventListener('click', function () { dlg.showModal(); });
-    document.getElementById('creditsClose').addEventListener('click', function () { dlg.close(); });
-    dlg.addEventListener('click', function (e) {
-      var r = dlg.getBoundingClientRect();
-      var outside = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
-      if (outside) dlg.close();
-    });
   })();
 
   /* ---- FAQ expand all ---- */
