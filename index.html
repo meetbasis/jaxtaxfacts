@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jax Tax Facts &middot; Amendment 3 and Jacksonville</title>
 <meta name="description" content="What Amendment 3 would mean for Jacksonville city services, and for the money that pays for them. A research project of the Jacksonville Civic Council.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/jug2dtx.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
-  body { margin: 0; background: #FCFCFD; color: #16262A; font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.62; -webkit-font-smoothing: antialiased; }
-  h1, h2, h3, h4 { font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-weight: 700; line-height: 1.2; margin: 0; }
+  body { margin: 0; background: #FCFCFD; color: #16262A; font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.62; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4 { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; line-height: 1.2; margin: 0; }
   p { margin: 0; }
+  strong, b { font-weight: 600; }
   a { color: inherit; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
-  .eyebrow { display: block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1FC98D; margin-bottom: 16px; }
+  .eyebrow { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #1FC98D; margin-bottom: 16px; }
 
   /* Header */
   .masthead { position: relative; background: #053A40 url('img/hero-bridge.jpg') center 42% / cover no-repeat; }
@@ -23,8 +22,8 @@
   .masthead > * { position: relative; z-index: 1; }
   .hdr { background: transparent; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .brand-name { color: #FCFCFD; font-size: 14.5px; font-weight: 800; letter-spacing: 0.08em; }
-  .hdr a.tool { color: #7FE0C4; font-size: 13.5px; font-weight: 700; text-decoration: none; border: 1.5px solid #17636A; border-radius: 6px; padding: 7px 15px; }
+  .brand-name { color: #FCFCFD; font-size: 14.5px; font-weight: 600; letter-spacing: 0.08em; }
+  .hdr a.tool { color: #7FE0C4; font-size: 13.5px; font-weight: 600; text-decoration: none; border: 1.5px solid #17636A; border-radius: 6px; padding: 7px 15px; }
   .hdr a.tool:hover { background: #0A464E; }
 
   /* Hero */
@@ -41,7 +40,7 @@
   .sec.tint { background: #F8FCFB; border-top: 1px solid #E9F3F1; border-bottom: 1px solid #E9F3F1; }
   .sec h2 { font-size: 31px; letter-spacing: -0.01em; max-width: 860px; }
   .sec .lead { margin-top: 16px; font-size: 16.5px; color: #445255; max-width: 780px; }
-  .act-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #01676E; background: #E4F5F1; border-radius: 999px; padding: 5px 13px; margin-bottom: 18px; }
+  .act-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #01676E; background: #E4F5F1; border-radius: 999px; padding: 5px 13px; margin-bottom: 18px; }
 
   /* Act 1 voices */
   .voices { background: #F2FAF9; padding: 68px 0 72px; border-bottom: 1px solid #E1EFEC; }
@@ -51,7 +50,7 @@
   .face { background: none; border: 0; padding: 0; cursor: pointer; text-align: center; width: 108px; font-family: inherit; }
   .face img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; opacity: 0.72; border: 3px solid transparent; transition: opacity .15s, border-color .15s; }
   .face.on img { opacity: 1; border-color: #1FC98D; }
-  .face .fn { display: block; margin-top: 9px; font-size: 12.5px; font-weight: 700; color: #16262A; line-height: 1.25; }
+  .face .fn { display: block; margin-top: 9px; font-size: 12.5px; font-weight: 600; color: #16262A; line-height: 1.25; }
   .face .fr { display: block; font-size: 11.5px; color: #63797A; line-height: 1.3; }
   /* Quote carousel */
   .qcar { position: relative; margin-top: 30px; }
@@ -71,16 +70,16 @@
   .qdot:hover { background: #8FCFC0; }
   .qdot.on { background: #1FC98D; transform: scale(1.25); }
   .qdot:focus-visible { outline: 2px solid #1FC98D; outline-offset: 3px; }
-  .qcount { font-size: 12.5px; font-weight: 700; color: #63797A; letter-spacing: 0.04em; min-width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
+  .qcount { font-size: 12.5px; font-weight: 600; color: #63797A; letter-spacing: 0.04em; min-width: 44px; text-align: right; font-variant-numeric: tabular-nums; }
   @media (prefers-reduced-motion: reduce) { .qtrack { scroll-behavior: auto; transition: none; } }
   .qcard { background: #FCFCFD; border: 1px solid #DCEDE9; border-left: 4px solid #1FC98D; border-radius: 10px; padding: 26px 30px; }
   .qcard.lead-q { border-left-width: 6px; }
-  .qcard .q { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; line-height: 1.5; color: #10292C; }
+  .qcard .q { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 19px; line-height: 1.5; color: #10292C; }
   .qcard.lead-q .q { font-size: 21.5px; }
-  .qcard .who { margin-top: 14px; font-size: 14px; font-weight: 700; }
+  .qcard .who { margin-top: 14px; font-size: 14px; font-weight: 600; }
   .qcard .role { font-size: 12.5px; color: #63797A; }
   /* Footnotes */
-  sup.fn { font-size: 11px; font-weight: 700; line-height: 0; }
+  sup.fn { font-size: 11px; font-weight: 600; line-height: 0; }
   sup.fn a { color: #01676E; text-decoration: none; padding: 0 1px; }
   .notes { background: #F4F8F8; border-top: 1px solid #E1EFEC; padding: 46px 0 52px; }
   .notes h2 { font-size: 20px; margin-bottom: 18px; }
@@ -89,22 +88,22 @@
   .notes li:target { background: #E4F5F1; }
 
   /* Act 2 identity + figure */
-  .ident { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 600; color: #16262A; max-width: 720px; }
+  .ident { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 19px; font-weight: 600; color: #16262A; max-width: 720px; }
   .pivot { margin-top: 22px; max-width: 760px; font-size: 17px; color: #33474A; }
   .pivot strong { color: #16262A; }
   .bi-figure { margin-top: 40px; background: #FCFCFD; border: 1px solid #DFEDEA; border-radius: 14px; padding: 34px 36px 30px; }
   .bi-caption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid #EEF5F4; padding-bottom: 14px; }
-  .bi-caption .t { font-size: 12px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: #01676E; }
+  .bi-caption .t { font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #01676E; }
   .bi-caption .n { font-size: 12.5px; color: #7C8D8F; }
-  .bi-amount { font-family: 'Source Serif 4', Georgia, serif; font-size: 44px; font-weight: 700; color: #053A40; margin-top: 20px; letter-spacing: -0.02em; }
+  .bi-amount { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 44px; font-weight: 600; color: #053A40; margin-top: 20px; letter-spacing: -0.02em; }
   .bi-amount-sub { margin-top: 10px; font-size: 15px; color: #445255; max-width: 740px; }
-  .bi-bar-label { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 700; color: #445255; margin: 30px 0 10px; }
+  .bi-bar-label { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 600; color: #445255; margin: 30px 0 10px; }
   .bi-bar { display: flex; height: 54px; border-radius: 8px; overflow: hidden; }
-  .bi-seg { display: flex; align-items: center; justify-content: center; color: #FCFCFD; font-weight: 700; font-size: 13.5px; text-align: center; padding: 0 6px; }
+  .bi-seg { display: flex; align-items: center; justify-content: center; color: #FCFCFD; font-weight: 600; font-size: 13.5px; text-align: center; padding: 0 6px; }
   .bi-legend { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; margin-top: 22px; }
   .bi-leg { display: flex; gap: 10px; align-items: flex-start; }
   .bi-dot { width: 12px; height: 12px; border-radius: 3px; margin-top: 5px; flex-shrink: 0; }
-  .bi-leg h4 { font-family: 'Public Sans', sans-serif; font-size: 13.5px; font-weight: 700; }
+  .bi-leg h4 { font-family: 'tt-commons-pro', sans-serif; font-size: 13.5px; font-weight: 600; }
   .bi-leg p { font-size: 13px; color: #5C6C6F; margin-top: 2px; }
   .bi-foot { font-size: 12.5px; color: #8A9698; margin-top: 22px; padding-top: 15px; border-top: 1px solid #EEF5F4; }
 
@@ -122,7 +121,7 @@
   .aw-slot { position: relative; background: #0A464E; border: 1.5px solid #2C5D57; border-radius: 10px; aspect-ratio: 16 / 10; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
   .aw-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .aw-slot .scrim { position: relative; z-index: 1; padding: 16px 18px 14px; background: linear-gradient(to top, rgba(5,58,64,0.94) 30%, rgba(5,58,64,0) 100%); display: flex; flex-direction: column; gap: 5px; }
-  .aw-slot .tag { font-size: 10.5px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: #7FE0C4; }
+  .aw-slot .tag { font-size: 10.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #7FE0C4; }
   .aw-slot .cap { font-size: 13.5px; color: #FCFCFD; font-weight: 600; line-height: 1.4; }
   .aw-slot .cred { font-size: 10.5px; color: #9CC4BC; line-height: 1.35; }
   .aw-note { margin-top: 22px; font-size: 12.5px; color: #7FA9A2; }
@@ -134,19 +133,19 @@
 
   /* Act 4 FAQ */
   .faqhead { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
-  .expand { font-family: inherit; font-size: 13px; font-weight: 700; color: #01676E; background: none; border: 1.5px solid #BFE0DA; border-radius: 6px; padding: 8px 15px; cursor: pointer; }
+  .expand { font-family: inherit; font-size: 13px; font-weight: 600; color: #01676E; background: none; border: 1.5px solid #BFE0DA; border-radius: 6px; padding: 8px 15px; cursor: pointer; }
   .expand:hover { background: #EAF7F4; }
   .video { margin-top: 32px; border-radius: 12px; overflow: hidden; border: 1px solid #DFEDEA; }
   .vfacade { position: relative; width: 100%; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #053A40 0%, #01676E 100%); border: 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; font-family: inherit; color: #FCFCFD; padding: 20px; }
   .vfacade .play { width: 62px; height: 62px; border-radius: 50%; background: #1FC98D; display: flex; align-items: center; justify-content: center; }
-  .vfacade .vt { font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; font-weight: 700; text-align: center; max-width: 520px; }
+  .vfacade .vt { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 20px; font-weight: 600; text-align: center; max-width: 520px; }
   .vfacade .vm { font-size: 13px; color: #A9CEC8; }
   .video iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
   .faq { margin-top: 34px; border-top: 1px solid #E1EFEC; }
   details { border-bottom: 1px solid #E1EFEC; }
-  summary { list-style: none; cursor: pointer; padding: 20px 40px 20px 0; position: relative; font-family: 'Source Serif 4', Georgia, serif; font-size: 18.5px; font-weight: 600; color: #16262A; }
+  summary { list-style: none; cursor: pointer; padding: 20px 40px 20px 0; position: relative; font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 18.5px; font-weight: 600; color: #16262A; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: '+'; position: absolute; right: 6px; top: 16px; font-family: 'Public Sans', sans-serif; font-size: 24px; font-weight: 400; color: #01676E; }
+  summary::after { content: '+'; position: absolute; right: 6px; top: 16px; font-family: 'tt-commons-pro', sans-serif; font-size: 24px; font-weight: 400; color: #01676E; }
   details[open] summary::after { content: '\2013'; }
   .ans { padding: 0 40px 24px 0; max-width: 830px; }
   .ans p { font-size: 15.5px; color: #445255; }
@@ -157,12 +156,12 @@
   .ans .flag { margin-top: 14px; font-size: 13px; color: #8A6A1E; background: #FBF2DF; border: 1px solid #E8D5A8; border-radius: 6px; padding: 10px 13px; }
   .tl-row { display: flex; align-items: center; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
   .tl-step { background: #F2FAF9; border: 1px solid #DCEDE9; border-radius: 8px; padding: 12px 18px; text-align: center; }
-  .tl-amt { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 700; color: #053A40; }
-  .tl-yr { font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; color: #63797A; }
+  .tl-amt { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 19px; font-weight: 600; color: #053A40; }
+  .tl-yr { font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; color: #63797A; }
   .tl-line { flex: 1; min-width: 18px; height: 2px; background: #CFE6E1; }
   .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 18px; margin-top: 18px; }
   .stat { background: #F2FAF9; border-radius: 10px; padding: 18px 20px; }
-  .stat .big { font-family: 'Source Serif 4', Georgia, serif; font-size: 26px; font-weight: 700; color: #053A40; display: block; }
+  .stat .big { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 26px; font-weight: 600; color: #053A40; display: block; }
   .stat p { font-size: 13px; color: #5C6C6F; margin-top: 6px; }
 
   /* Tool band + footer */
@@ -170,9 +169,9 @@
   .toolbox { display: flex; align-items: center; justify-content: space-between; gap: 26px; flex-wrap: wrap; }
   .toolbox h2 { font-size: 24px; max-width: 620px; }
   .toolbox p { margin-top: 8px; font-size: 14.5px; color: #4C6360; max-width: 620px; }
-  .btn-dark { background: #053A40; color: #FCFCFD; text-decoration: none; font-size: 14.5px; font-weight: 700; padding: 13px 24px; border-radius: 7px; white-space: nowrap; }
+  .btn-dark { background: #053A40; color: #FCFCFD; text-decoration: none; font-size: 14.5px; font-weight: 600; padding: 13px 24px; border-radius: 7px; white-space: nowrap; }
   .ftr { background: #053A40; color: #B9DAD3; padding: 46px 0 30px; }
-  .ftr h4 { font-family: 'Public Sans', sans-serif; font-size: 11.5px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: #7FE0C4; }
+  .ftr h4 { font-family: 'tt-commons-pro', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #7FE0C4; }
   .ftr p { font-size: 13.5px; margin-top: 12px; max-width: 620px; }
   .ftr-logo-link { display: inline-block; border-radius: 4px; }
   .ftr-logo-link:focus-visible { outline: 2px solid #1FC98D; outline-offset: 4px; }
