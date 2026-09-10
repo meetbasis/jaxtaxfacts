@@ -21,7 +21,9 @@
   .masthead::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,58,64,0.90) 0%, rgba(5,58,64,0.82) 55%, rgba(5,58,64,0.88) 100%); }
   .masthead > * { position: relative; z-index: 1; }
   .hdr { background: transparent; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
-  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+  .brand:hover .brand-name { color: #7FE0C4; }
+  .brand:focus-visible { outline: 2px solid #1FC98D; outline-offset: 4px; border-radius: 4px; }
   .brand-name { color: #FCFCFD; font-size: 14.5px; font-weight: 600; letter-spacing: 0.08em; }
   .hdr a.tool { color: #7FE0C4; font-size: 13.5px; font-weight: 600; text-decoration: none; border: 1.5px solid #17636A; border-radius: 6px; padding: 7px 15px; }
   .hdr a.tool:hover { background: #0A464E; }
@@ -207,7 +209,7 @@
 
   <div class="masthead">
   <div class="hdr">
-    <div class="brand">
+    <a class="brand" href="https://jaxtaxfacts.com/">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="17" cy="17" r="16" stroke="#1FC98D" stroke-width="2"/>
         <path d="M17 3 C22 9 22 25 17 31" stroke="#1FC98D" stroke-width="2" fill="none"/>
@@ -215,7 +217,7 @@
         <path d="M2 17 L32 17" stroke="#1FC98D" stroke-width="2"/>
       </svg>
       <span class="brand-name">JAX TAX FACTS</span>
-    </div>
+    </a>
     <a class="tool" href="budget-tool.html">Try the budget</a>
   </div>
 
