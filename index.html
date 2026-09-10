@@ -17,8 +17,8 @@
   .eyebrow { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #1FC98D; margin-bottom: 16px; }
 
   /* Header */
-  .masthead { position: relative; background: #053A40 url('img/hero-bridge.jpg') center 42% / cover no-repeat; }
-  .masthead::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,58,64,0.90) 0%, rgba(5,58,64,0.82) 55%, rgba(5,58,64,0.88) 100%); }
+  .masthead { position: relative; display: flex; flex-direction: column; min-height: 590px; background: #053A40 url('img/hero-bridge.jpg') center 42% / cover no-repeat; }
+  .masthead::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,58,64,0.74) 0%, rgba(5,58,64,0.62) 55%, rgba(5,58,64,0.72) 100%); }
   .masthead > * { position: relative; z-index: 1; }
   .hdr { background: transparent; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
@@ -29,10 +29,12 @@
   .hdr a.tool:hover { background: #0A464E; }
 
   /* Hero */
-  .hero { background: transparent; color: #FCFCFD; padding: 64px 0 86px; }
+  .hero { background: transparent; color: #FCFCFD; padding: 64px 0 86px; flex: 1; display: flex; align-items: center; }
+  .hero .wrap { width: 100%; }
   .hero h1, .hero .sub { text-shadow: 0 1px 2px rgba(5,58,64,0.6); }
   .hero h1 { font-size: 46px; max-width: 1024px; letter-spacing: -0.015em; }
   .hero h1 span { display: block; }
+  .hero h1 span:first-child { color: #00E6A5; }
   .hero h1 span + span { margin-top: 14px; }
   .hero .sub { margin-top: 26px; font-size: 18.5px; color: #B9DAD3; max-width: 800px; }
   .hero .credit { margin-top: 40px; font-size: 12.5px; color: #6F9E97; }
@@ -185,6 +187,7 @@
   @media (max-width: 900px) {
     .wrap { padding: 0 24px; }
     .hdr { padding: 16px 24px; }
+    .masthead { min-height: 0; }
     .hero { padding: 46px 0 58px; }
     .hero h1 { font-size: 31px; }
     .hero .sub { font-size: 16.5px; }
