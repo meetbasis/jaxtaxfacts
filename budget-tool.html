@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jax Tax Facts &middot; Try the Budget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Public Sans', system-ui, sans-serif; background: #FCFCFD; color: #16262A; }
+  h1, h2, h3 { font-family: 'Source Serif 4', Georgia, serif; margin: 0; color: #053A40; }
+  p { margin: 0; line-height: 1.6; }
+  a { color: #01676E; }
+  a:hover { color: #1FC98D; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #01676E; }
+
+  /* Header */
+  .hdr { background: #053A40; height: 88px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-name { color: #FCFCFD; font-weight: 700; font-size: 16px; letter-spacing: 0.01em; }
+  .nav { display: flex; align-items: center; gap: 4px; }
+  .nav a { text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; color: #EAF6F4; }
+  .nav a:hover { opacity: 0.85; color: #EAF6F4; }
+  .nav a.active { background: #1FC98D; color: #053A40; font-weight: 800; }
+  .nav a.active:hover { color: #053A40; }
+
+  /* Footer */
+  .ftr { background: #053A40; padding: 56px 48px 32px; }
+  .ftr-inner { max-width: 1120px; margin: 0 auto; }
+  .ftr h4 { font-family: 'Source Serif 4', Georgia, serif; color: #FCFCFD; font-size: 17px; font-weight: 600; margin: 0 0 14px; }
+  .ftr-links { display: flex; flex-direction: column; gap: 10px; }
+  .ftr-links a { color: #CDE9E5; font-size: 14px; font-weight: 500; text-decoration: none; }
+  .ftr-links a:hover { color: #1FC98D; }
+  .ftr-bottom { max-width: 1120px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid #0B4F57; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .ftr-bottom p { color: #6FA39C; font-size: 12.5px; }
+
+  .pagehead { padding: 56px 0 30px; }
+  .pagehead h1 { font-size: 36px; font-weight: 600; margin-top: 14px; max-width: 740px; }
+  .pagehead .sub { font-size: 16px; color: #445255; max-width: 720px; margin-top: 14px; }
+
+  /* Sticky tracker */
+  .tracker-wrap { position: sticky; top: 0; z-index: 50; padding: 14px 0 0; background: linear-gradient(180deg, #FCFCFD 0%, #FCFCFD 78%, rgba(252,252,253,0) 100%); }
+  .tracker { background: #053A40; border-radius: 12px; padding: 18px 26px 20px; transition: background 0.3s ease; }
+  .tracker.alarm { background: #7A1F14; }
+  .tracker-top { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tracker-top .label { color: #B9DAD3; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.3s ease; }
+  .tracker.alarm .tracker-top .label { color: #F0BDB4; }
+  .tracker-top .val { color: #FCFCFD; font-family: 'Source Serif 4', Georgia, serif; font-size: 23px; font-weight: 700; }
+  .progress-track { height: 12px; background: #0B4F57; border-radius: 8px; overflow: hidden; transition: background 0.3s ease; }
+  .tracker.alarm .progress-track { background: #571209; }
+  .progress-fill { height: 100%; background: #1FC98D; border-radius: 8px; width: 0%; transition: width 0.15s ease, background 0.3s ease; }
+  .tracker.alarm .progress-fill { background: #FF7A63; }
+  .split { display: flex; gap: 26px; margin-top: 12px; flex-wrap: wrap; }
+  .split div { font-size: 12.5px; color: #9FC7C2; transition: color 0.3s ease; }
+  .tracker.alarm .split div { color: #E8B3A9; }
+  .split strong { color: #FCFCFD; font-weight: 700; }
+
+  .panel { padding: 24px 0 72px; }
+
+  .verdict { border-radius: 10px; padding: 20px 24px; margin: 22px 0 26px; font-size: 15px; line-height: 1.6; }
+  .verdict-progress { background: #F2FAF9; color: #33474A; }
+  .verdict-done { background: #FBEFED; border: 1px solid #EFC8C0; color: #7A2A20; }
+  .verdict-done strong { color: #5E1C13; }
+  .verdict h3 { font-size: 17px; font-weight: 700; color: #7A2A20; margin-bottom: 8px; font-family: 'Source Serif 4', Georgia, serif; }
+  .hidden { display: none; }
+
+  .actions { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .btn-mint { background: #1FC98D; color: #053A40; font-weight: 700; padding: 12px 20px; border-radius: 6px; font-size: 14px; border: none; cursor: pointer; font-family: inherit; }
+  .btn-rust { background: #B23A2E; color: #FCFCFD; font-weight: 700; padding: 12px 20px; border-radius: 6px; font-size: 14px; border: none; cursor: pointer; font-family: inherit; }
+  .btn-ghost { background: transparent; color: #053A40; font-weight: 700; padding: 11px 18px; border-radius: 6px; font-size: 14px; border: 1.5px solid #C7D8D6; cursor: pointer; font-family: inherit; }
+  .actions-note { font-size: 12.5px; color: #8A9698; margin-bottom: 30px; }
+
+  .locked-head, .adj-head { font-size: 12.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 6px 0 12px; }
+  .locked-head { color: #8A9698; }
+  .adj-head { color: #01676E; }
+  .locked-card { background: #F1F3F3; border-radius: 10px; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; opacity: 0.9; max-width: 520px; gap: 16px; margin-bottom: 32px; }
+  .locked-card h4 { font-family: 'Public Sans', sans-serif; font-size: 15px; font-weight: 700; color: #5C6C6F; margin: 0 0 4px; }
+  .locked-card p { font-size: 12.5px; color: #8A9698; }
+  .locked-card .amt { font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; font-weight: 700; color: #5C6C6F; white-space: nowrap; }
+
+  /* Department rows */
+  .dept { border: 1px solid #E4EFEE; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; transition: border-color 0.2s ease, background 0.2s ease; }
+  .dept.ps { border: 1.5px solid #D9C7A8; background: #FDFAF4; }
+  .dept.placeholder { border-style: dashed; border-color: #C9D6D5; background: #FAFCFB; }
+  .dept.hit { border-color: #E8B3A9; background: #FEF8F7; }
+  .dept-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 16px; }
+  .dept-name { font-size: 15.5px; font-weight: 700; color: #16262A; }
+  .dept-sub { font-size: 12.5px; color: #8A9698; margin-top: 2px; max-width: 540px; }
+  .dept-tag { display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-top: 8px; }
+  .dept-nums { text-align: right; flex-shrink: 0; }
+  .dept-budget { font-size: 12px; color: #8A9698; }
+  .dept-cut { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-weight: 700; color: #B23A2E; }
+  .dept input[type=range] { width: 100%; accent-color: #B23A2E; margin: 0; }
+  .dept-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 10px; flex-wrap: wrap; }
+  .dept-pct { font-size: 12px; color: #5C6C6F; font-weight: 600; flex-shrink: 0; }
+  .consequence { font-size: 13.5px; font-weight: 600; text-align: right; flex: 1; min-width: 200px; }
+  .c0 { color: #0F7A55; }
+  .c1 { color: #7A8B32; }
+  .c2 { color: #B77A17; }
+  .c3 { color: #B23A2E; }
+  .c4 { color: #7A1F14; }
+
+  .illus { background: #FBF2DF; border-radius: 8px; padding: 14px 18px; font-size: 12.5px; color: #7A5F1C; line-height: 1.55; margin: 26px 0 8px; }
+  .illus strong { color: #6B5215; }
+
+  @media (max-width: 900px) {
+    .hdr { flex-direction: column; height: auto; padding: 16px 24px; gap: 12px; }
+    .wrap { padding: 0 24px; }
+    .dept-top { flex-direction: column; }
+    .dept-nums { text-align: left; }
+    .consequence { text-align: left; }
+    .tracker-top .val { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hdr">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17" cy="17" r="16" stroke="#1FC98D" stroke-width="2"/>
+        <path d="M17 3 C22 9 22 25 17 31" stroke="#1FC98D" stroke-width="2" fill="none"/>
+        <path d="M17 3 C12 9 12 25 17 31" stroke="#1FC98D" stroke-width="2" fill="none"/>
+        <path d="M2 17 L32 17" stroke="#1FC98D" stroke-width="2"/>
+      </svg>
+      <span class="brand-name">JAX TAX FACTS</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="budget-tool.html" class="active">Try the Budget</a>
+    </div>
+  </div>
+
+  <div class="pagehead">
+    <div class="wrap">
+      <span class="eyebrow">TRY IT YOURSELF</span>
+      <h1>You close the gap</h1>
+      <p class="sub">Jacksonville has to find $300 million a year. Debt, pension and other obligations are fixed by contract, so they are off the table. Everything else is a choice, including public safety. Make the cuts you would be willing to defend, and watch what it takes.</p>
+    </div>
+  </div>
+
+  <div class="tracker-wrap">
+    <div class="wrap">
+      <div class="tracker" id="tracker">
+        <div class="tracker-top">
+          <span class="label" id="trackerLabel">Still to find</span>
+          <span class="val" id="trackerVal">$300M of $300M</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="split">
+          <div>From public safety: <strong id="fromPS">$0M</strong></div>
+          <div>From quality of life: <strong id="fromOther">$0M</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="wrap">
+
+      <div class="verdict verdict-done hidden" id="verdictDone">
+        <h3 id="verdictTitle">You closed the gap. Here is what it cost.</h3>
+        <p id="verdictBody"></p>
+      </div>
+      <div class="verdict verdict-progress" id="verdictProgress">
+        <span id="verdictProgressText">Move any slider to start cutting. The two buttons below show you two ways to get all the way there.</span>
+      </div>
+
+      <div class="actions">
+        <button class="btn-mint" onclick="balanceProtectPS()">Close it without touching public safety</button>
+        <button class="btn-rust" onclick="balanceAcrossAll()">Close it across the whole budget</button>
+        <button class="btn-ghost" onclick="resetAll()">Start over</button>
+      </div>
+
+      <div class="locked-head">Fixed by contract, not a yearly choice</div>
+      <div class="locked-card">
+        <div><h4>Debt, Pension and Other Obligations</h4><p>Debt service, unfunded pension obligations, and interlocal agreements with Baldwin and the Beaches</p></div>
+        <div class="amt">$503M</div>
+      </div>
+
+      <div class="adj-head">Everything that is a choice: $1,525M</div>
+      <div id="deptList"></div>
+
+      <div class="illus">
+        <strong>About the service descriptions:</strong> the consequence shown next to each slider is illustrative. It indicates the general severity of a cut at that scale, not a specific published plan. Dollar figures are from the City of Jacksonville&rsquo;s proposed FY26-27 budget, which the City Council had not yet adopted.
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ftr">
+    <div class="ftr-inner">
+      <div>
+        <h4>On this site</h4>
+        <div class="ftr-links">
+          <a href="index.html">Home</a>
+          <a href="budget-tool.html">Try the Budget</a>
+        </div>
+      </div>
+    </div>
+    <div class="ftr-bottom">
+      <p>&copy; 2026 Jax Tax Facts, a project of the Jacksonville Civic Council. For public education purposes; not legal, tax, or financial advice.</p>
+      <p>Jacksonville, Florida</p>
+    </div>
+  </div>
+
+<script>
+  /* tiers: [no cut, light, moderate, severe, extreme] keyed off % cut */
+  var DEPTS = [
+    {
+      key: 'publicsafety', label: 'Public Safety', ps: true, budget: 1073.7,
+      sub: "Jacksonville Sheriff's Office & Fire-Rescue",
+      tag: 'More than half of city spending',
+      tiers: [
+        'Current staffing and response times',
+        'Overtime and equipment replacement squeezed',
+        'Hiring freezes; slower response times',
+        'Station closures and patrol reductions on the table',
+        'Core police and fire capacity materially reduced'
+      ]
+    },
+    {
+      key: 'publicworks', label: 'Public Works', budget: 69.4,
+      sub: 'Roads, sidewalks, drainage and infrastructure maintenance',
+      tiers: [
+        'Current maintenance schedule',
+        'Repairs slip further down the queue',
+        'Backlog grows; resurfacing deferred',
+        'Only emergency repairs get done',
+        'Routine maintenance effectively stops'
+      ]
+    },
+    {
+      key: 'youth', label: 'Kids Hope Alliance & Youth Programs', budget: 59.7,
+      sub: 'After-school, summer camps, early learning and violence prevention',
+      tiers: [
+        'Current programs and enrollment',
+        'Fewer summer camp seats',
+        'After-school slots cut across the city',
+        'Whole programs end; providers lose contracts',
+        'Most city youth programming ends'
+      ]
+    },
+    {
+      key: 'parks', label: 'Parks & Recreation', budget: 58.7,
+      sub: 'Parks, community centers and recreation programs',
+      tiers: [
+        'Current upkeep and programming',
+        'Mowing and grounds care less frequent',
+        'Programs cut; some centers reduce hours',
+        'Community center closures',
+        'Parks maintained in name only'
+      ]
+    },
+    {
+      key: 'ufhealth', label: 'UF Health Indigent Care', budget: 56.0,
+      sub: "The city's contribution toward care for uninsured residents",
+      tiers: [
+        'Current level of support',
+        'Hospital absorbs more uncompensated care',
+        'Service lines come under review',
+        'Clinic hours and capacity reduced',
+        'Care for uninsured residents materially reduced'
+      ]
+    },
+    {
+      key: 'libraries', label: 'Public Libraries', budget: 45.7,
+      sub: 'Branches, programs and materials',
+      tiers: [
+        'Current hours and programming',
+        'Fewer new books and materials',
+        'Reduced hours across branches',
+        'Branch closures on the table',
+        'System reduced to a handful of locations'
+      ]
+    },
+    {
+      key: 'internal', label: 'Finance, Technology, HR & City Buildings', budget: 44.0,
+      sub: 'Payroll, purchasing, IT systems and facility upkeep',
+      tiers: [
+        'Current operations',
+        'Purchasing and hiring slow down',
+        'System upgrades deferred; building repairs delayed',
+        'Vendor payments and recruitment back up',
+        'Basic city operations degrade'
+      ]
+    },
+    {
+      key: 'governance', label: 'Mayor, City Council & Oversight', budget: 23.7,
+      sub: 'Elected offices, Inspector General, Ethics and civil rights',
+      tiers: [
+        'Current staffing',
+        'Constituent response slows',
+        'District and committee staff reduced',
+        'Oversight and ethics capacity cut',
+        'Watchdog functions barely staffed'
+      ]
+    },
+    {
+      key: 'health', label: 'Health, Housing & Homelessness', budget: 20.8,
+      sub: 'Direct health services, housing assistance and homelessness response',
+      tiers: [
+        'Current services',
+        'Waitlists lengthen',
+        'Housing assistance reduced',
+        'Outreach and shelter capacity cut',
+        'Homelessness response scaled back sharply'
+      ]
+    },
+    {
+      key: 'elections', label: 'Supervisor of Elections', budget: 14.7,
+      sub: 'Polling places, early voting and election administration',
+      tiers: [
+        'Current polling places and staffing',
+        'Fewer early voting hours',
+        'Polling locations consolidated',
+        'Precinct closures and longer lines',
+        'Elections run at the statutory minimum'
+      ]
+    },
+    {
+      key: 'arts', label: 'Arts, Culture & Nonprofit Grants', budget: 13.9,
+      sub: 'Cultural Council grants and public service grants to nonprofits',
+      tiers: [
+        'Current grant levels',
+        'Smaller awards across the board',
+        'Some organizations lose funding entirely',
+        'Cultural programming contracts sharply',
+        'City grant-making effectively ends'
+      ]
+    },
+    {
+      key: 'courts', label: 'Courts, State Attorney & Public Defender', budget: 13.0,
+      sub: 'The local justice system the city helps fund',
+      tiers: [
+        'Current operations',
+        'Case processing slows',
+        'Backlogs grow in county court',
+        'Staffing gaps in prosecution and defense',
+        'Court operations materially impaired'
+      ]
+    },
+    {
+      key: 'neighborhoods', label: 'Neighborhoods & Code Enforcement', budget: 12.3,
+      sub: 'Code enforcement, animal care and resident services',
+      tiers: [
+        'Current response times',
+        'Complaints take longer to resolve',
+        'Inspections reduced; animal care strained',
+        'Enforcement limited to the worst cases',
+        'Most complaints go unanswered'
+      ]
+    },
+    {
+      key: 'planning', label: 'Planning, Economic Development & Veterans', budget: 11.7,
+      sub: 'Planning, downtown, business development, veterans and special events',
+      tiers: [
+        'Current staffing and programs',
+        'Permit review slows',
+        'Project and business support reduced',
+        'Development review backs up',
+        'Planning and business support minimal'
+      ]
+    },
+    {
+      key: 'medexaminer', label: 'Medical Examiner', budget: 7.9,
+      sub: 'Death investigations, autopsies and forensic pathology',
+      tiers: [
+        'Current caseload capacity',
+        'Turnaround times lengthen',
+        'Families wait longer for findings',
+        'Case backlogs affect prosecutions',
+        'Investigative capacity materially reduced'
+      ]
+    }
+  ];
+
+  var TARGET = 300;
+  /* Derived from DEPTS so the pools can never drift out of step with the rows. */
+  var PS_BUDGET = 0, OTHER_BUDGET = 0;
+  DEPTS.forEach(function (d) { if (d.ps) { PS_BUDGET += d.budget; } else { OTHER_BUDGET += d.budget; } });
+  var POOL = PS_BUDGET + OTHER_BUDGET;
+  var cuts = {};
+  DEPTS.forEach(function (d) { cuts[d.key] = 0; });
+
+  function tierIndex(pct) {
+    if (pct <= 0) return 0;
+    if (pct < 16) return 1;
+    if (pct < 36) return 2;
+    if (pct < 61) return 3;
+    return 4;
+  }
+
+  function buildRows() {
+    var container = document.getElementById('deptList');
+    container.innerHTML = '';
+    DEPTS.forEach(function (d) {
+      var row = document.createElement('div');
+      row.className = 'dept' + (d.ps ? ' ps' : '') + (d.placeholder ? ' placeholder' : '');
+      row.id = 'dept-' + d.key;
+
+      var tagHtml = '';
+      if (d.tag) {
+        var tagColor = d.placeholder ? '#B08A3E' : '#8A6A1E';
+        var tagBg = d.placeholder ? '#FBF2DF' : '#F4E9D4';
+        tagHtml = '<div class="dept-tag" style="color:' + tagColor + '; background:' + tagBg + ';">' + d.tag + '</div>';
+      }
+
+      row.innerHTML =
+        '<div class="dept-top">' +
+          '<div>' +
+            '<div class="dept-name">' + d.label + '</div>' +
+            '<div class="dept-sub">' + d.sub + '</div>' +
+            tagHtml +
+          '</div>' +
+          '<div class="dept-nums">' +
+            '<div class="dept-budget">Budget: $' + d.budget.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + 'M</div>' +
+            '<div class="dept-cut">&minus;$<span id="amt-' + d.key + '">0.0</span>M</div>' +
+          '</div>' +
+        '</div>' +
+        '<input type="range" min="0" max="100" value="0" id="slider-' + d.key + '" aria-label="Cut ' + d.label + '" />' +
+        '<div class="dept-foot">' +
+          '<span class="dept-pct"><span id="pct-' + d.key + '">0</span>% cut</span>' +
+          '<span class="consequence c0" id="cons-' + d.key + '">' + d.tiers[0] + '</span>' +
+        '</div>';
+
+      container.appendChild(row);
+
+      row.querySelector('#slider-' + d.key).addEventListener('input', function (e) {
+        cuts[d.key] = Number(e.target.value);
+        updateRow(d.key);
+        updateTracker();
+      });
+    });
+  }
+
+  function updateRow(key) {
+    var d = DEPTS.find(function (x) { return x.key === key; });
+    var pct = Math.round(cuts[key] || 0);
+    var amt = (d.budget * (cuts[key] || 0)) / 100;
+    var t = tierIndex(pct);
+
+    document.getElementById('amt-' + key).textContent = amt.toFixed(1);
+    document.getElementById('pct-' + key).textContent = pct;
+
+    var cons = document.getElementById('cons-' + key);
+    cons.textContent = d.tiers[t];
+    cons.className = 'consequence c' + t;
+
+    document.getElementById('dept-' + key).classList.toggle('hit', t >= 3);
+
+    var slider = document.getElementById('slider-' + key);
+    if (Number(slider.value) !== pct) slider.value = pct;
+  }
+
+  function updateTracker() {
+    var fromPS = 0, fromOther = 0;
+    DEPTS.forEach(function (d) {
+      var amt = (d.budget * (cuts[d.key] || 0)) / 100;
+      if (d.ps) { fromPS += amt; } else { fromOther += amt; }
+    });
+    var total = fromPS + fromOther;
+    var reached = total >= TARGET;
+    var remaining = Math.max(TARGET - total, 0);
+    var pctOfTarget = Math.min((total / TARGET) * 100, 100);
+
+    document.getElementById('progressFill').style.width = pctOfTarget + '%';
+    document.getElementById('fromPS').textContent = '$' + fromPS.toFixed(0) + 'M';
+    document.getElementById('fromOther').textContent = '$' + fromOther.toFixed(0) + 'M';
+    document.getElementById('tracker').classList.toggle('alarm', reached);
+
+    if (reached) {
+      document.getElementById('trackerLabel').textContent = 'Gap closed. Total cut';
+      document.getElementById('trackerVal').textContent = '$' + total.toFixed(0) + 'M';
+    } else {
+      document.getElementById('trackerLabel').textContent = 'Still to find';
+      document.getElementById('trackerVal').textContent = '$' + remaining.toFixed(0) + 'M of $300M';
+    }
+
+    document.getElementById('verdictDone').classList.toggle('hidden', !reached);
+    document.getElementById('verdictProgress').classList.toggle('hidden', reached);
+
+    if (reached) {
+      document.getElementById('verdictBody').textContent = verdictText(fromPS, fromOther, total);
+    } else if (total > 0) {
+      document.getElementById('verdictProgressText').textContent =
+        '$' + remaining.toFixed(0) + 'M still to find. Everything you have cut so far amounts to $' +
+        total.toFixed(0) + 'M. The gap is an annual one, so this is what it takes every year, not once.';
+    }
+  }
+
+  function verdictText(fromPS, fromOther, total) {
+    var otherShare = Math.round((fromOther / OTHER_BUDGET) * 100);
+    if (fromPS < 1) {
+      return 'You protected the Sheriff’s Office and Fire-Rescue completely. To do it you cut $' +
+        fromOther.toFixed(0) + 'M, about ' + otherShare +
+        '% of everything else the city runs: the parks, the libraries, the road crews, the youth programs, the health clinics, the courts, the elections office. All of it, reduced by roughly that much, every year.';
+    }
+    return 'You took $' + fromPS.toFixed(0) + 'M out of the Sheriff’s Office and Fire-Rescue, and $' +
+      fromOther.toFixed(0) + 'M out of everything else, about ' + otherShare +
+      '% of the parks, libraries, road crews, youth programs and resident services combined. That is the trade this amendment sets up, and it repeats every year.';
+  }
+
+  function balanceProtectPS() {
+    var pct = (TARGET / OTHER_BUDGET) * 100;
+    DEPTS.forEach(function (d) {
+      cuts[d.key] = d.ps ? 0 : pct;
+      updateRow(d.key);
+    });
+    updateTracker();
+  }
+
+  function balanceAcrossAll() {
+    var pct = (TARGET / POOL) * 100;
+    DEPTS.forEach(function (d) {
+      cuts[d.key] = pct;
+      updateRow(d.key);
+    });
+    updateTracker();
+  }
+
+  function resetAll() {
+    DEPTS.forEach(function (d) {
+      cuts[d.key] = 0;
+      updateRow(d.key);
+    });
+    updateTracker();
+    document.getElementById('verdictProgressText').textContent =
+      'Move any slider to start cutting. The two buttons below show you two ways to get all the way there.';
+  }
+
+  buildRows();
+  updateTracker();
+</script>
+</body>
+</html>
