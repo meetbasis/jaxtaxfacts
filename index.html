@@ -174,7 +174,11 @@
   .ftr { background: #053A40; color: #B9DAD3; padding: 46px 0 30px; }
   .ftr h4 { font-family: 'Public Sans', sans-serif; font-size: 11.5px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: #7FE0C4; }
   .ftr p { font-size: 13.5px; margin-top: 12px; max-width: 620px; }
+  .ftr-logo-link { display: inline-block; border-radius: 4px; }
+  .ftr-logo-link:focus-visible { outline: 2px solid #1FC98D; outline-offset: 4px; }
   .ftr-logo { display: block; height: 48px; width: auto; }
+  .ftr-bottom a { color: #9CC4BC; text-decoration: none; border-bottom: 1px solid #2C5D57; }
+  .ftr-bottom a:hover { color: #DCEDE9; }
   .ftr-links { margin-top: 12px; display: flex; gap: 20px; flex-wrap: wrap; }
   .ftr-links a { color: #DCEDE9; font-size: 13.5px; text-decoration: none; border-bottom: 1px solid #2C5D57; }
   .ftr-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid #0F4A51; font-size: 12px; color: #6F9E97; }
@@ -480,12 +484,12 @@
 
   <div class="ftr">
     <div class="wrap">
-      <img class="ftr-logo" src="img/jcc-logo.svg" alt="Jacksonville Civic Council" width="245" height="65">
+      <a class="ftr-logo-link" href="https://jaxciviccouncil.com" target="_blank" rel="noopener"><img class="ftr-logo" src="img/jcc-logo.svg" alt="Jacksonville Civic Council" width="245" height="65"></a>
       <div class="ftr-links">
         <a href="budget-tool.html">Try the budget</a>
       </div>
       <div class="ftr-bottom">
-        <p>&copy; 2026 Jax Tax Facts, a project of the Jacksonville Civic Council. For public education purposes; not legal, tax, or financial advice. Jacksonville, Florida.</p>
+        <p>&copy; 2026 Jax Tax Facts, a project of the <a href="https://jaxciviccouncil.com" target="_blank" rel="noopener">Jacksonville Civic Council</a>. For public education purposes; not legal, tax, or financial advice. Jacksonville, Florida.</p>
       </div>
     </div>
   </div>
