@@ -17,27 +17,23 @@
   .eyebrow { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #01565C; margin-bottom: 16px; }
 
   /* Header */
-  .masthead { position: relative; display: flex; flex-direction: column; min-height: 590px; background: #053A40 url('img/hero-bridge.jpg') center center / cover no-repeat; }
-  /* Same underlay as jaxciviccouncil.com/values: flat black at 40% over the photo */
-  .masthead::before { content: ''; position: absolute; inset: 0; background: #000; opacity: 0.88; }
-  .masthead > * { position: relative; z-index: 1; }
+  .masthead { display: flex; flex-direction: column; min-height: 590px; background: #053A40; }
   .hdr { background: transparent; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
   .brand:hover .brand-name { color: #7FE0C4; }
   .brand:focus-visible { outline: 2px solid #1FC98D; outline-offset: 4px; border-radius: 4px; }
   .brand-name { color: #FCFCFD; font-size: 14.5px; font-weight: 600; letter-spacing: 0.08em; }
-  .hdr a.tool { color: #FCFCFD; font-size: 13.5px; font-weight: 600; text-decoration: none; border: 1.5px solid #17636A; border-radius: 6px; padding: 7px 15px; }
+  .hdr a.tool { color: #7FE0C4; font-size: 13.5px; font-weight: 600; text-decoration: none; border: 1.5px solid #17636A; border-radius: 6px; padding: 7px 15px; }
   .hdr a.tool:hover { background: #0A464E; }
 
   /* Hero */
   .hero { background: transparent; color: #FCFCFD; padding: 64px 0 86px; flex: 1; display: flex; align-items: center; }
   .hero .wrap { width: 100%; }
-  .hero h1, .hero .sub { text-shadow: 0 1px 2px rgba(5,58,64,0.6); }
   .hero h1 { font-size: 42px; max-width: 1024px; letter-spacing: -0.015em; }
   .hero h1 span { display: block; }
   .hero h1 span:first-child { color: #00E6A5; }
   .hero h1 span + span { margin-top: 14px; }
-  .hero .sub { margin-top: 26px; font-size: 18.5px; color: #FCFCFD; max-width: 800px; }
+  .hero .sub { margin-top: 26px; font-size: 18.5px; color: #B9DAD3; max-width: 800px; }
   .hero .credit { margin-top: 40px; font-size: 12.5px; color: #B9DAD3; }
 
   /* Sections */
