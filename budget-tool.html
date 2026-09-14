@@ -11,10 +11,10 @@
   h1, h2, h3 { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; color: #053A40; }
   p { margin: 0; line-height: 1.6; }
   strong, b { font-weight: 600; }
-  a { color: #01676E; }
+  a { color: #01565C; }
   a:hover { color: #1FC98D; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
-  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #01676E; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #01565C; }
 
   /* Header */
   .hdr { background: #053A40; height: 88px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
@@ -25,8 +25,8 @@
   .nav { display: flex; align-items: center; gap: 4px; }
   .nav a { text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; color: #EAF6F4; }
   .nav a:hover { opacity: 0.85; color: #EAF6F4; }
-  .nav a.active { background: #1FC98D; color: #053A40; font-weight: 600; }
-  .nav a.active:hover { color: #053A40; }
+  .nav a.active { background: #1FC98D; color: #041F23; font-weight: 600; }
+  .nav a.active:hover { color: #041F23; }
 
   /* Footer */
   .ftr { background: #053A40; color: #B9DAD3; padding: 46px 0 30px; }
@@ -35,12 +35,13 @@
   .ftr-logo-link { display: inline-block; border-radius: 4px; }
   .ftr-logo-link:focus-visible { outline: 2px solid #1FC98D; outline-offset: 4px; }
   .ftr-logo { display: block; height: 48px; width: auto; }
-  .ftr-bottom a { color: #9CC4BC; text-decoration: none; border-bottom: 1px solid #2C5D57; }
-  .ftr-bottom a:hover { color: #DCEDE9; }
-  .ftr-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid #0F4A51; font-size: 12px; color: #6F9E97; }
+  .ftr-bottom a { color: #DCEDE9; text-decoration: none; border-bottom: 1px solid #2C5D57; }
+  .ftr-bottom a:hover { color: #FCFCFD; }
+  .ftr-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid #0F4A51; font-size: 12px; color: #B9DAD3; }
 
   .pagehead { padding: 56px 0 30px; }
   .pagehead h1 { font-size: 36px; font-weight: 600; margin-top: 14px; max-width: 740px; }
+  .pagehead .disclaimer { margin-top: 18px; max-width: 720px; font-size: 15px; color: #16262A; background: #F2FAF9; border-left: 4px solid #01565C; border-radius: 6px; padding: 12px 16px; }
   .pagehead .sub { font-size: 16px; color: #445255; max-width: 720px; margin-top: 14px; }
 
   /* Sticky tracker */
@@ -49,15 +50,15 @@
   .tracker.alarm { background: #7A1F14; }
   .tracker-top { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
   .tracker-top .label { color: #B9DAD3; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.3s ease; }
-  .tracker.alarm .tracker-top .label { color: #F0BDB4; }
+  .tracker.alarm .tracker-top .label { color: #FADBD5; }
   .tracker-top .val { color: #FCFCFD; font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 23px; font-weight: 600; }
   .progress-track { height: 12px; background: #0B4F57; border-radius: 8px; overflow: hidden; transition: background 0.3s ease; }
   .tracker.alarm .progress-track { background: #571209; }
   .progress-fill { height: 100%; background: #1FC98D; border-radius: 8px; width: 0%; transition: width 0.15s ease, background 0.3s ease; }
   .tracker.alarm .progress-fill { background: #FF7A63; }
   .split { display: flex; gap: 26px; margin-top: 12px; flex-wrap: wrap; }
-  .split div { font-size: 12.5px; color: #9FC7C2; transition: color 0.3s ease; }
-  .tracker.alarm .split div { color: #E8B3A9; }
+  .split div { font-size: 12.5px; color: #B9DAD3; transition: color 0.3s ease; }
+  .tracker.alarm .split div { color: #FADBD5; }
   .split strong { color: #FCFCFD; font-weight: 600; }
 
   .panel { padding: 24px 0 72px; }
@@ -70,18 +71,18 @@
   .hidden { display: none; }
 
   .actions { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-  .btn-mint { background: #1FC98D; color: #053A40; font-weight: 600; padding: 12px 20px; border-radius: 6px; font-size: 14px; border: none; cursor: pointer; font-family: inherit; }
-  .btn-rust { background: #B23A2E; color: #FCFCFD; font-weight: 600; padding: 12px 20px; border-radius: 6px; font-size: 14px; border: none; cursor: pointer; font-family: inherit; }
+  .btn-mint { background: #1FC98D; color: #041F23; font-weight: 600; padding: 12px 20px; border-radius: 6px; font-size: 14px; border: none; cursor: pointer; font-family: inherit; }
+  .btn-rust { background: #8F2A20; color: #FCFCFD; font-weight: 600; padding: 12px 20px; border-radius: 6px; font-size: 14px; border: none; cursor: pointer; font-family: inherit; }
   .btn-ghost { background: transparent; color: #053A40; font-weight: 600; padding: 11px 18px; border-radius: 6px; font-size: 14px; border: 1.5px solid #C7D8D6; cursor: pointer; font-family: inherit; }
-  .actions-note { font-size: 12.5px; color: #8A9698; margin-bottom: 30px; }
+  .actions-note { font-size: 12.5px; color: #445255; margin-bottom: 30px; }
 
   .locked-head, .adj-head { font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin: 6px 0 12px; }
-  .locked-head { color: #8A9698; }
-  .adj-head { color: #01676E; }
-  .locked-card { background: #F1F3F3; border-radius: 10px; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; opacity: 0.9; max-width: 520px; gap: 16px; margin-bottom: 32px; }
-  .locked-card h4 { font-family: 'tt-commons-pro', sans-serif; font-size: 15px; font-weight: 600; color: #5C6C6F; margin: 0 0 4px; }
-  .locked-card p { font-size: 12.5px; color: #8A9698; }
-  .locked-card .amt { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 20px; font-weight: 600; color: #5C6C6F; white-space: nowrap; }
+  .locked-head { color: #445255; }
+  .adj-head { color: #01565C; }
+  .locked-card { background: #F1F3F3; border-radius: 10px; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; max-width: 520px; gap: 16px; margin-bottom: 32px; }
+  .locked-card h4 { font-family: 'tt-commons-pro', sans-serif; font-size: 15px; font-weight: 600; color: #445255; margin: 0 0 4px; }
+  .locked-card p { font-size: 12.5px; color: #445255; }
+  .locked-card .amt { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 20px; font-weight: 600; color: #445255; white-space: nowrap; }
 
   /* Department rows */
   .dept { border: 1px solid #E4EFEE; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; transition: border-color 0.2s ease, background 0.2s ease; }
@@ -90,23 +91,23 @@
   .dept.hit { border-color: #E8B3A9; background: #FEF8F7; }
   .dept-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 16px; }
   .dept-name { font-size: 15.5px; font-weight: 600; color: #16262A; }
-  .dept-sub { font-size: 12.5px; color: #8A9698; margin-top: 2px; max-width: 540px; }
-  .dept-tag { display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-top: 8px; }
+  .dept-sub { font-size: 12.5px; color: #445255; margin-top: 2px; max-width: 540px; }
+  .dept-tag { display: inline-block; font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-top: 8px; }
   .dept-nums { text-align: right; flex-shrink: 0; }
-  .dept-budget { font-size: 12px; color: #8A9698; }
+  .dept-budget { font-size: 12px; color: #445255; }
   .dept-cut { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 19px; font-weight: 600; color: #B23A2E; }
   .dept input[type=range] { width: 100%; accent-color: #B23A2E; margin: 0; }
   .dept-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 10px; flex-wrap: wrap; }
-  .dept-pct { font-size: 12px; color: #5C6C6F; font-weight: 600; flex-shrink: 0; }
+  .dept-pct { font-size: 12px; color: #445255; font-weight: 600; flex-shrink: 0; }
   .consequence { font-size: 13.5px; font-weight: 600; text-align: right; flex: 1; min-width: 200px; }
-  .c0 { color: #0F7A55; }
-  .c1 { color: #7A8B32; }
-  .c2 { color: #B77A17; }
-  .c3 { color: #B23A2E; }
+  .c0 { color: #0A5C40; }
+  .c1 { color: #4A5419; }
+  .c2 { color: #6E4409; }
+  .c3 { color: #8F2A20; }
   .c4 { color: #7A1F14; }
 
-  .illus { background: #FBF2DF; border-radius: 8px; padding: 14px 18px; font-size: 12.5px; color: #7A5F1C; line-height: 1.55; margin: 26px 0 8px; }
-  .illus strong { color: #6B5215; }
+  .illus { background: #FBF2DF; border-radius: 8px; padding: 14px 18px; font-size: 12.5px; color: #5A4512; line-height: 1.55; margin: 26px 0 8px; }
+  .illus strong { color: #4A3A0E; }
 
   @media (max-width: 900px) {
     .hdr { flex-direction: column; height: auto; padding: 16px 24px; gap: 12px; }
@@ -140,13 +141,14 @@
     <div class="wrap">
       <span class="eyebrow">TRY IT YOURSELF</span>
       <h1>You close the gap</h1>
+      <p class="disclaimer"><strong>This tool is for illustration only.</strong> The dollar figures come from the city&rsquo;s proposed FY2026-27 budget, not adopted spending. It does not model every legal limit on how property tax revenue may be used.</p>
       <p class="sub">Jacksonville has to find $300 million a year. Debt, pension and other obligations are fixed by contract, so they are off the table. Everything else is a choice, including public safety. Make the cuts you would be willing to defend, and watch what it takes.</p>
     </div>
   </div>
 
   <div class="tracker-wrap">
     <div class="wrap">
-      <div class="tracker" id="tracker">
+      <div class="tracker" id="tracker" aria-live="polite" aria-atomic="true">
         <div class="tracker-top">
           <span class="label" id="trackerLabel">Still to find</span>
           <span class="val" id="trackerVal">$300M of $300M</span>
@@ -163,12 +165,14 @@
   <div class="panel">
     <div class="wrap">
 
+      <div id="verdictLive" aria-live="polite" aria-atomic="true">
       <div class="verdict verdict-done hidden" id="verdictDone">
         <h3 id="verdictTitle">You closed the gap. Here is what it cost.</h3>
         <p id="verdictBody"></p>
       </div>
       <div class="verdict verdict-progress" id="verdictProgress">
         <span id="verdictProgressText">Move any slider to start cutting. The two buttons below show you two ways to get all the way there.</span>
+      </div>
       </div>
 
       <div class="actions">
@@ -399,7 +403,7 @@
 
       var tagHtml = '';
       if (d.tag) {
-        var tagColor = d.placeholder ? '#B08A3E' : '#8A6A1E';
+        var tagColor = '#5E4712';
         var tagBg = d.placeholder ? '#FBF2DF' : '#F4E9D4';
         tagHtml = '<div class="dept-tag" style="color:' + tagColor + '; background:' + tagBg + ';">' + d.tag + '</div>';
       }
@@ -416,7 +420,7 @@
             '<div class="dept-cut">&minus;$<span id="amt-' + d.key + '">0.0</span>M</div>' +
           '</div>' +
         '</div>' +
-        '<input type="range" min="0" max="100" value="0" id="slider-' + d.key + '" aria-label="Cut ' + d.label + '" />' +
+        '<input type="range" min="0" max="100" value="0" id="slider-' + d.key + '" aria-label="Cut ' + d.label + '" aria-valuetext="0 percent, 0.0 million dollars" />' +
         '<div class="dept-foot">' +
           '<span class="dept-pct"><span id="pct-' + d.key + '">0</span>% cut</span>' +
           '<span class="consequence c0" id="cons-' + d.key + '">' + d.tiers[0] + '</span>' +
@@ -449,6 +453,7 @@
 
     var slider = document.getElementById('slider-' + key);
     if (Number(slider.value) !== pct) slider.value = pct;
+    slider.setAttribute('aria-valuetext', pct + ' percent, ' + amt.toFixed(1) + ' million dollars');
   }
 
   function updateTracker() {

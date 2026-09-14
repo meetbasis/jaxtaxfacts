@@ -82,7 +82,8 @@
   .qcard .q { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 19px; line-height: 1.5; color: #10292C; }
   .qcard.lead-q .q { font-size: 21.5px; }
   .qcard .who { margin-top: 14px; font-size: 14px; font-weight: 600; }
-  .qcard .role { font-size: 12.5px; color: #63797A; }
+  .qcard .role { font-size: 12.5px; color: #445255; }
+  .qcard .role a { color: #01565C; text-decoration: underline; text-underline-offset: 2px; }
   /* Footnotes */
   sup.fn { font-size: 11px; font-weight: 600; line-height: 0; }
   sup.fn a { color: #01676E; text-decoration: none; padding: 0 1px; }
@@ -100,6 +101,7 @@
   .bi-caption { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid #EEF5F4; padding-bottom: 14px; }
   .bi-caption .t { font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #01676E; }
   .bi-caption .n { font-size: 12.5px; color: #7C8D8F; }
+  .bi-headline { font-size: 26px; font-weight: 600; line-height: 1.3; color: #053A40; margin-top: 20px; max-width: 900px; letter-spacing: -0.01em; }
   .bi-amount { font-family: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 44px; font-weight: 600; color: #053A40; margin-top: 20px; letter-spacing: -0.02em; }
   .bi-amount-sub { margin-top: 10px; font-size: 15px; color: #445255; max-width: 740px; }
   .bi-bar-label { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 600; color: #445255; margin: 30px 0 10px; }
@@ -181,9 +183,9 @@
   .ftr-logo-link { display: inline-block; border-radius: 4px; }
   .ftr-logo-link:focus-visible { outline: 2px solid #1FC98D; outline-offset: 4px; }
   .ftr-logo { display: block; height: 48px; width: auto; }
-  .ftr-bottom a { color: #9CC4BC; text-decoration: none; border-bottom: 1px solid #2C5D57; }
-  .ftr-bottom a:hover { color: #DCEDE9; }
-  .ftr-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid #0F4A51; font-size: 12px; color: #6F9E97; }
+  .ftr-bottom a { color: #DCEDE9; text-decoration: none; border-bottom: 1px solid #2C5D57; }
+  .ftr-bottom a:hover { color: #FCFCFD; }
+  .ftr-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid #0F4A51; font-size: 12px; color: #B9DAD3; }
 
   @media (max-width: 900px) {
     .wrap { padding: 0 24px; }
@@ -195,6 +197,7 @@
     .sec { padding: 52px 0; }
     .sec h2, .voices h2 { font-size: 24px; }
     .bi-amount { font-size: 33px; }
+    .bi-headline { font-size: 21px; }
     .bi-legend, .aw-grid, .feel-grid, .pts, .stat-row { grid-template-columns: 1fr; display: grid; }
     .bi-bar { height: auto; flex-direction: column; }
     .bi-seg { padding: 9px 6px; }
@@ -279,7 +282,7 @@
           <div class="qcard">
             <p class="q">&ldquo;The amendment could certainly have been rolled out with greater transparency and the meaningful involvement of key stakeholders, including our law enforcement agencies. No one wants to defund our incredible sheriffs, yet there were no discussions to involve them in this process.&rdquo;</p>
             <div class="who">James Uthmeier</div>
-            <div class="role">Attorney General of Florida &middot; Florida&rsquo;s Voice, August 10, 2026</div>
+            <div class="role">Attorney General of Florida &middot; <a href="https://flvoicenews.com/uthmeier-law-enforcement-should-have-been-involved-in-property-tax-exemption-proposal/" target="_blank" rel="noopener">Florida&rsquo;s Voice, August 10, 2026</a></div>
           </div>
           </li>
           <li class="qslide" role="group" aria-roledescription="slide" aria-label="Quote 7 of 7">
@@ -312,8 +315,7 @@
           <span class="t">Estimated annual city revenue loss</span>
           <span class="n">Once fully phased in, 2028</span>
         </div>
-        <div class="bi-amount">$300 million a year</div>
-        <p class="bi-amount-sub">Taken out of the roughly $2 billion the city spends each year on the Sheriff&rsquo;s Office, Fire-Rescue, parks, libraries, public works and neighborhood services.<sup class="fn"><a href="#n1">1</a></sup></p>
+        <p class="bi-headline">Jacksonville City Auditors estimate a $300 million annual recurring loss taken out of the roughly $2 billion the city spends each year on the Sheriff&rsquo;s Office, Fire-Rescue, parks, libraries, public works and neighborhood services.<sup class="fn"><a href="#n1">1</a></sup></p>
 
         <div class="bi-bar-label"><span>What that money pays for today</span><span>$2.03B</span></div>
         <div class="bi-bar">
@@ -341,7 +343,7 @@
   <!-- ============ ACT 3: WHAT IT WOULD FEEL LIKE ============ -->
   <div class="atwork">
     <div class="wrap">
-      <h2>What Your Property Taxes Pay For<sup class="fn"><a href="#n6">6</a></sup></h2>
+      <h2>What Your Property Taxes Pay For</h2>
       <div class="aw-grid">
         <div class="aw-slot">
           <img src="img/fire-rescue.jpg" alt="Fire crews working ladder trucks at a large building fire in downtown Jacksonville at night" loading="lazy">
@@ -418,7 +420,8 @@
         <details>
           <summary>Would the loss of property tax revenue shift the cost burden to renters and small businesses?</summary>
           <div class="ans">
-            <p>It is likely. Eliminating such a significant share of Florida&rsquo;s property tax base would require at least a significant portion of the lost revenue to be generated somewhere else, including increasing property tax rates. Increasing property taxes on rental and commercial properties means landlords and businesses will pay more, forcing them to choose between absorbing those costs or shifting them onto renters and consumers.</p>
+            <p>It is likely. According to the Tax Foundation, eliminating such a significant share of Florida&rsquo;s property tax base would not lower the cost of running local services. It would simply require that the lost revenue be raised somewhere else, including through higher property tax rates on everything that stays taxable. The Florida Policy Institute has made a similar point about rental and commercial property: if those owners pay more, they would have to decide whether to absorb the cost or shift it onto renters and consumers.</p>
+            <p class="src">See note <a href="#n5">5</a>.</p>
           </div>
         </details>
 
@@ -427,7 +430,7 @@
           <div class="ans">
             <p>Nothing in Amendment 3 provides for it. The enrolled joint resolution contains no reimbursement, backfill, trust fund or offset for local revenue losses, for any county, and the implementing bill appropriates nothing.</p>
             <p>A trust fund was in the original proposal. The filed version of the joint resolution directed the Legislature to create a fund providing grants to help local governments implement the amendment. That provision was removed before passage and does not appear in the enrolled text.</p>
-            <p>When Florida has reimbursed local governments for past property tax amendments, in 2008 and again in 2024, it did so only for counties defined in state law as fiscally constrained. Duval County has never qualified and does not qualify now. For scale, the entire statewide fiscally constrained distribution is roughly $64.7 million a year shared across 33 counties, about a fifth of Jacksonville&rsquo;s projected annual loss by itself.</p>
+            <p>When Florida has reimbursed local governments for past property tax amendments, in 2008 and again in 2024, it did so only for counties defined in state law as fiscally constrained. Duval County has never qualified and does not qualify now. For scale, the entire statewide fiscally constrained distribution is roughly $64.7 million a year shared across 29 counties, about a fifth of Jacksonville&rsquo;s projected annual loss by itself.</p>
             <p>A future Legislature could choose to appropriate something. Nothing obligates it to, and the proposals floated so far are aimed at rural counties rather than urban ones.</p>
             <p class="src">See note <a href="#n4">4</a>.</p>
           </div>
@@ -437,19 +440,6 @@
           <summary>Can&rsquo;t the city just find the savings in waste?</summary>
           <div class="ans">
             <p>Jacksonville already invests about half as much per resident as its peer cities.<sup class="fn"><a href="#n2">2</a></sup> A reduction of this size is not the scale of thing that gets absorbed by trimming inefficiency. It is the scale of thing that removes services.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Who actually gets the tax break?</summary>
-          <div class="ans">
-            <p>Amendment 3 is presented as relief for homeowners. It is worth knowing how narrowly that relief is distributed, because everyone shares the cost of it either way.</p>
-            <div class="stat-row">
-              <div class="stat"><span class="big">~14,000</span><p>Jacksonville homes already pay no property tax at all. A larger exemption gives them nothing further.</p></div>
-              <div class="stat"><span class="big">~47%</span><p>of Duval parcels see no direct homestead savings, including every rented home in the city.</p></div>
-            </div>
-            <p style="margin-top:16px;">The homestead exemption applies to owner-occupied homes. If you rent, you receive nothing directly, while any millage increase, fee or sales-tax change used to replace the lost revenue reaches you the same as everyone else.<sup class="fn"><a href="#n5">5</a></sup></p>
-            <div class="flag"><strong>Needs data before publishing:</strong> how the savings actually distribute across home values, against Jacksonville&rsquo;s median household income and median home value.</div>
           </div>
         </details>
 
@@ -466,8 +456,7 @@
         <li id="n2"><strong>Per-resident spending.</strong> <em>2023 Comparative Public Finance Analysis: Jacksonville Compared to Tampa, Orlando, Charlotte, Nashville, Indianapolis, Birmingham and Charleston</em>, Mary O. Borg, Ph.D. and J. Rody Borg, Ph.D., September 2025, using 2023 audited financial reports. <a href="https://jaxciviccouncil.com/2025/09/27/2022-comparative-public-finance-analysis-jacksonville-and-florida-cities-and-counties/">Published by the Jacksonville Civic Council</a>.</li>
         <li id="n3"><strong>Homestead exemption.</strong> The increased exemption applies to non-school property taxes only. School district taxes are unaffected.</li>
         <li id="n4"><strong>State funding for local governments.</strong> Enrolled and filed texts of CS/HJR 1-F, 2026 Special Session; CS/SB 4F; Florida Statutes ss. 218.12, 218.125, 218.136 and 218.67; Office of Economic and Demographic Research distribution schedule for fiscal year 2025&ndash;26.</li>
-        <li id="n5"><strong>Renters and the exemption.</strong> The homestead exemption applies only to owner-occupied homes, so renters receive nothing directly from it.</li>
-        <li id="n6"><strong>Photographs.</strong> Image credits and permissions to be confirmed before publication.</li>
+        <li id="n5"><strong>Cost shift to renters and businesses.</strong> Nicole Fox and Katherine Loughead, <a href="https://taxfoundation.org/blog/florida-property-tax-proposal/" target="_blank" rel="noopener"><em>The Real November Ballot Question: What Price Are Floridians Willing to Pay to &ldquo;Save Their Homes?&rdquo;</em></a>, Tax Foundation, June 3, 2026. Esteban Leonardo Santis, Ph.D., <a href="https://www.floridapolicy.org/posts/florida-property-tax-amendment-ballot-language-summary" target="_blank" rel="noopener"><em>Amendment 3: Property Tax Ballot Language Summary and Local Fiscal Impacts</em></a>, Florida Policy Institute, July 21, 2026.</li>
       </ol>
     </div>
   </div>
