@@ -17,7 +17,9 @@
   .eyebrow { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #01565C; margin-bottom: 16px; }
 
   /* Header */
-  .masthead { display: flex; flex-direction: column; min-height: 590px; background: #053A40; }
+  .masthead { position: relative; display: flex; flex-direction: column; min-height: 590px; background: #053A40 url('img/hero-bridge.jpg') center center / cover no-repeat; }
+  .masthead::before { content: ''; position: absolute; inset: 0; background: #000; opacity: 0.4; }
+  .masthead > * { position: relative; z-index: 1; }
   .hdr { background: transparent; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; }
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
   .brand:hover .brand-name { color: #7FE0C4; }
@@ -29,6 +31,7 @@
   /* Hero */
   .hero { background: transparent; color: #FCFCFD; padding: 64px 0 86px; flex: 1; display: flex; align-items: center; }
   .hero .wrap { width: 100%; }
+  .hero h1, .hero .sub { text-shadow: 0 1px 2px rgba(5,58,64,0.6); }
   .hero h1 { font-size: 42px; max-width: 1024px; letter-spacing: -0.015em; }
   .hero h1 span { display: block; }
   .hero h1 span:first-child { color: #00E6A5; }
@@ -102,7 +105,8 @@
   .bi-amount-sub { margin-top: 10px; font-size: 15px; color: #445255; max-width: 740px; }
   .bi-bar-label { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 600; color: #445255; margin: 30px 0 10px; }
   .bi-bar { display: flex; height: 54px; border-radius: 8px; overflow: hidden; }
-  .bi-seg { display: flex; align-items: center; justify-content: center; color: #FCFCFD; font-weight: 600; font-size: 13.5px; text-align: center; padding: 0 6px; }
+  .bi-seg { display: flex; align-items: center; justify-content: center; color: #FCFCFD; font-weight: 600; font-size: 13.5px; text-align: center; padding: 0 6px; min-width: 0; }
+  .bi-seg-pct { display: none; }
   .bi-legend { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; margin-top: 22px; }
   .bi-leg { display: flex; gap: 10px; align-items: flex-start; }
   .bi-dot { width: 12px; height: 12px; border-radius: 3px; margin-top: 5px; flex-shrink: 0; }
@@ -195,8 +199,11 @@
     .bi-amount { font-size: 33px; }
     .bi-headline { font-size: 21px; }
     .bi-legend, .aw-grid, .feel-grid, .pts, .stat-row { grid-template-columns: 1fr; display: grid; }
-    .bi-bar { height: auto; flex-direction: column; }
-    .bi-seg { padding: 9px 6px; }
+    /* Small screens: keep one proportional bar, show percentages inside, rely on the legend for names and amounts */
+    .bi-bar { height: 44px; }
+    .bi-seg { padding: 0 4px; font-size: 13px; }
+    .bi-seg-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .bi-seg-pct { display: inline; }
     .face { width: 88px; }
     .face img { width: 76px; height: 76px; }
     .qcard { padding: 22px 20px; }
@@ -315,9 +322,9 @@
 
         <div class="bi-bar-label"><span>What that money pays for today</span><span>$2.03B</span></div>
         <div class="bi-bar">
-          <div class="bi-seg" style="flex: 53; background: #053A40;">Public safety, $1.07B</div>
-          <div class="bi-seg" style="flex: 22; background: #1FC98D; color: #041F23;">Quality of life, $450M</div>
-          <div class="bi-seg" style="flex: 25; background: #4A5419;">Debt, pension and obligations, $503M</div>
+          <div class="bi-seg" style="flex: 53; background: #053A40;"><span class="bi-seg-label">Public safety, $1.07B</span><span class="bi-seg-pct" aria-hidden="true">53%</span></div>
+          <div class="bi-seg" style="flex: 22; background: #1FC98D; color: #041F23;"><span class="bi-seg-label">Quality of life, $450M</span><span class="bi-seg-pct" aria-hidden="true">22%</span></div>
+          <div class="bi-seg" style="flex: 25; background: #4A5419;"><span class="bi-seg-label">Debt, pension and obligations, $503M</span><span class="bi-seg-pct" aria-hidden="true">25%</span></div>
         </div>
         <div class="bi-legend">
           <div class="bi-leg"><div class="bi-dot" style="background:#053A40;"></div><div><h4>Public safety, about $1.07B</h4><p>The Sheriff&rsquo;s Office and Fire-Rescue. More than half of what the city spends, and equal to 83% of all property tax revenue.</p></div></div>
